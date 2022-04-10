@@ -1,0 +1,10 @@
+@import "https://agri-component.netlify.app/css/components.css";
+
+.search-panel {
+  display: flex;
+}
+span.navmtrl {
+  font-size: 2rem;
+}
+.logo-text {
+}

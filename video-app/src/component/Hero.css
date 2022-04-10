@@ -1,0 +1,71 @@
+@import "https://agri-component.netlify.app/css/components.css";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.hero-section {
+  height: 25rem;
+  width: 100%;
+  border: 3px solid salmon;
+}
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  max-width: 100%;
+  width: 39rem;
+  padding: 2rem;
+  background-color: orange;
+}
+.leftside {
+  height: 25rem;
+  width: 100%;
+  background-color: rgb(175, 255, 15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-vdo {
+  height: 3rem;
+  width: 8rem;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 0.4rem;
+  border: 4px solid orange;
+  cursor: pointer;
+  font-weight: 800;
+  background-image: linear-gradient(
+    to right top,
+    #f1b26a,
+    #7e4ec7,
+    #d30cd0,
+    #d61e92,
+    #eb126f
+  );
+}
+
+.catagory-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 3rem;
+}
+.box {
+  width: 15rem;
+  height: 15rem;
+  background-color: var(--background-universal-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+  box-shadow: 0px 0px 10px var(--dark-black-color);
+  font-weight: bold;
+  font-style: italic;
+}

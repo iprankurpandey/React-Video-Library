@@ -1,0 +1,25 @@
+@import "https://agri-component.netlify.app/css/components.css";
+.footer-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 8rem;
+  background-color: var(--silver-color);
+  max-width: 100%;
+  padding: 1rem;
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.h4 {
+  font-size: 1.2rem;
+}
+.social-media-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--silver-color);
+  font-size: 2rem;
+}
