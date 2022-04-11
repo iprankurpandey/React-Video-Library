@@ -1,11 +1,14 @@
-import Footer from "./component/Footer";
-import Header from "./component/Header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./page/Homepage";
+import VideoListing from "./page/VideoListing";
 
 function App() {
   return (
     <div>
-      <Homepage />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/VideoListing" element={<VideoListing />} />
+      </Routes>
     </div>
   );
 }
