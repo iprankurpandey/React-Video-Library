@@ -7,4 +7,14 @@ span.navmtrl {
   font-size: 2rem;
 }
 .logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  background-image: linear-gradient(
+    #fa8b0d,
+    #a3c74e,
+    #0cd327,
+    #d01ed6,
+    #eb126f
+  );
 }
