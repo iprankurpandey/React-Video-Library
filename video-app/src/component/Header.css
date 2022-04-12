@@ -1,4 +1,4 @@
-@import "https://agri-component.netlify.app/css/components.css";
+/* @import "https://agri-component.netlify.app/css/components.css"; */
 
 .search-panel {
   display: flex;
@@ -17,4 +17,9 @@ span.navmtrl {
     #d01ed6,
     #eb126f
   );
+}
+nav {
+  position: sticky;
+  top: 0;
+  background-color: orange;
 }

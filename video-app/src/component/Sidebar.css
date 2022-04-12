@@ -1,16 +1,38 @@
 .aside {
-  height: 80%;
-  width: 7rem;
+  height: 90%;
+  width: 08rem;
   position: fixed;
   background-color: rgb(252, 252, 252);
-  padding-top: 20px;
-  padding: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 10px 5px 5px rgb(235, 223, 223);
+  box-shadow: 2px 2px 2px rgb(235, 223, 223);
+  font-size: 1rem;
+  margin: 0 0 5rem 0;
 }
 .mi {
   font-size: 2rem;
+  cursor: pointer;
+  color: rgb(78, 77, 77);
+  font-weight: 500;
+}
+.watchlater,
+.history,
+.likes,
+.playlists,
+.explore,
+.Home {
+  text-align: center;
+  padding: 1.4rem;
+  font-size: 1.2rem;
+  font-weight: 550;
+  display: flex;
+  flex-direction: column;
+}
+.video-flex {
+  display: flex;
+  flex-wrap: wrap;
 }

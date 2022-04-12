@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
 }
-img {
+.hero-img {
   max-width: 100%;
   width: 39rem;
   padding: 2rem;
