@@ -8,15 +8,19 @@ function Hero() {
           <div className="leftside">
             <button className="btn-vdo">explore</button>
           </div>
-          <img src="https://svgshare.com/i/g73.svg" />
+          <img
+            className="hero-img"
+            src="https://svgshare.com/i/g73.svg"
+            alt="logo"
+          />
         </div>
       </div>
 
       <div class="catagory-choice">
         <div class="first-catagory box"> Technology</div>
-        <div class="second-catagory box">Humor</div>
-        <div class="third-catagory box">Religion</div>
-        <div class="fourth-catagory box">Self Help</div>
+        <div class="second-catagory box">Comedy</div>
+        <div class="third-catagory box">Tedx</div>
+        <div class="fourth-catagory box">Coding</div>
       </div>
     </div>
   );

@@ -16,6 +16,9 @@ function Header() {
               <span class="material-icons navmtrl">home</span>
             </Link>
           </span>
+          <div class="favorites-item" title="favorite items">
+            <span class="material-icons navmtrl">playlist_play</span>{" "}
+          </div>
         </div>
 
         <div class="search-panel" title="search items">
@@ -35,10 +38,6 @@ function Header() {
             <Link to="/VideoListing">
               <span class="material-icons navmtrl">smart_display</span>
             </Link>
-          </div>
-
-          <div class="favorites-item" title="favorite items">
-            <span class="material-icons navmtrl">favorite_border</span>{" "}
           </div>
 
           <div class="user-account" title="your account details">
