@@ -4,7 +4,9 @@
   border: 3px solid black;
   margin-left: 10rem;
   background-color: rgb(214, 235, 235);
+  cursor: pointer;
 }
+
 .video-card-image img {
   height: 12rem;
   width: 100%;
@@ -36,4 +38,12 @@
   overflow: auto;
   margin-bottom: 8rem;
   position: sticky;
+}
+.box2 {
+  display: none;
+}
+
+.box1:hover + .box2 {
+  display: block;
+  color: red;
 }
