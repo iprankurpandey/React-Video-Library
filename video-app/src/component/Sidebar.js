@@ -1,43 +1,49 @@
 import React from "react";
 import Chips from "./Chips";
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
 function Sidebar() {
   return (
     <div>
       <aside className="aside">
-        <div className="Home">
-          <span class="material-icons mi" title="Home">
-            home
-          </span>{" "}
+        <div className="home">
+          <Link to="/">
+            <span className="material-icons mi" title="Home">
+              home
+            </span>
+          </Link>
           Home
         </div>
+
         <div className="explore">
-          <span class="material-icons mi" title="Explore">
-            explore
-          </span>
+          <Link to="/VideoListing">
+            <span className="material-icons mi" title="Explore">
+              explore
+            </span>
+          </Link>
           Explore
         </div>
         <div className="playlists">
-          <span class="material-icons mi" title="Playlists">
+          <span className="material-icons mi" title="Playlists">
             queue
           </span>
           Playlists
         </div>
         <div className="likes">
-          <span class="material-icons mi" title="Liked Video">
+          <span className="material-icons mi" title="Liked Video">
             thumb_up
           </span>
           Likes
         </div>
         <div className="watchlater">
-          <span class="material-icons mi" title="History">
+          <span className="material-icons mi" title="History">
             watch_later
           </span>
           Watch Later
         </div>
         <div className="history">
-          <span class="material-icons mi" title="History">
+          <span className="material-icons mi" title="History">
             history
           </span>
           History

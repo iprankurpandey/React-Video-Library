@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SingleVideoPage from "./component/SingleVideoPage";
 import Homepage from "./page/Homepage";
 import VideoListing from "./page/VideoListing";
 
@@ -6,8 +7,9 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/VideoListing" element={<VideoListing />} />
+        <Route path="/" exact element={<Homepage />} />
+        <Route path="/VideoListing" exact element={<VideoListing />} />
+        <Route path="/VideoListing/:_id" exact element={<SingleVideoPage />} />
       </Routes>
     </div>
   );

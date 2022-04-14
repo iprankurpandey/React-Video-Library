@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 function Hero() {
   return (
@@ -6,8 +7,11 @@ function Hero() {
       <div className="hero-section">
         <div className="hero-container">
           <div className="leftside">
-            <button className="btn-vdo">explore</button>
+            <Link to="/VideoListing">
+              <button className="btn-vdo">explore</button>
+            </Link>
           </div>
+
           <img
             className="hero-img"
             src="https://svgshare.com/i/g73.svg"
