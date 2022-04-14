@@ -6,6 +6,14 @@
   background-color: rgb(214, 235, 235);
   cursor: pointer;
 }
+.video-card:hover {
+  height: 24rem;
+  width: 20rem;
+  border: 3px solid rgb(202, 9, 9);
+  margin-left: 10rem;
+  background-color: rgb(214, 235, 235);
+  cursor: pointer;
+}
 
 .video-card-image img {
   height: 12rem;
@@ -39,11 +47,39 @@
   margin-bottom: 8rem;
   position: sticky;
 }
-.box2 {
+
+.show {
   display: none;
 }
 
-.box1:hover + .box2 {
+.video-card:hover .show {
   display: block;
-  color: red;
+  height: 2.5rem;
+  width: 19.7rem;
+  border: 3px solid rgb(105, 103, 103);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  font-weight: 800;
+}
+.vmi {
+  font-size: 2rem;
+}
+.video-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  flex-direction: column;
+}
+button {
+  margin: 0 0 0.5rem 0;
+}
+button:hover {
+  background-color: silver;
+  color: white;
+  cursor: pointer;
 }
