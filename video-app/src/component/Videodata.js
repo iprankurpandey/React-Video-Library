@@ -9,7 +9,7 @@ function Videodata() {
   async function getVideoData() {
     try {
       await axios
-        .get("/api/videos")
+        .get(`/api/videos/`)
         .then((response) => setVideoList(response.data.videos));
     } catch (error) {
       console.log(`something went wrong `, error);
@@ -22,7 +22,7 @@ function Videodata() {
   return (
     <div className="videocard-style">
       {videoList.map((video) => (
-        <Videocard key={video.id} video={video} />
+        <Videocard key={video._id} video={video} />
       ))}
     </div>
   );
