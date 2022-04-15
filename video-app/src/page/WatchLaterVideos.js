@@ -1,0 +1,32 @@
+import React, { useContext } from "react";
+import { VideoListingContext } from "../component/context/VideoListContext";
+import Footer from "../component/Footer";
+import Header from "../component/Header";
+
+import "./WatchLaterVideos.css";
+function WatchLaterVideos() {
+  const { watchLater } = useContext(VideoListingContext);
+
+  return (
+    <div>
+      <Header />
+      <div className="watch-later"> WATCH LATER VIDEOS</div>
+      <div className="watch-later-videos">
+        {watchLater.map((videodata) => {
+          return (
+            <iframe
+              className="watch-later-iframe"
+              width="420"
+              height="315"
+              src={videodata.videoUrl}
+              title="video watch later"
+            ></iframe>
+          );
+        })}
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+export { WatchLaterVideos };

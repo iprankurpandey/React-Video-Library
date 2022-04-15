@@ -35,7 +35,7 @@ function Header() {
 
         <div class="right-side-panel">
           <div class="shopping-cart" title="shopping cart ">
-            <Link to="/LikedVideo">
+            <Link to="/WatchLaterVideos">
               <span class="material-icons navmtrl">smart_display</span>
             </Link>
           </div>

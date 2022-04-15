@@ -43,7 +43,7 @@
   gap: 1.5rem;
   overflow: auto;
   margin-bottom: 8rem;
-  position: sticky;
+  /* position: sticky; */
 }
 
 .show {

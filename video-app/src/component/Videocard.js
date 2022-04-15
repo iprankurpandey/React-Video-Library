@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import Sidevideolist from "./Sidevideolist";
+
 import "./Videocard.css";
 import axios from "axios";
 import { VideoListingContext } from "./context/VideoListContext";

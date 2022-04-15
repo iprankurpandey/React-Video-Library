@@ -32,18 +32,18 @@ function Sidebar() {
         </div>
 
         <div className="likes">
-          <Link to="/LikedVideo">
-            <span className="material-icons mi" title="Liked Video">
-              thumb_up
-            </span>
-          </Link>
+          <span className="material-icons mi" title="Liked Video">
+            thumb_up
+          </span>
           Likes
         </div>
 
         <div className="watchlater">
-          <span className="material-icons mi" title="History">
-            watch_later
-          </span>
+          <Link to="/WatchLaterVideos">
+            <span className="material-icons mi" title="History">
+              watch_later
+            </span>
+          </Link>
           Watch Later
         </div>
         <div className="history">
