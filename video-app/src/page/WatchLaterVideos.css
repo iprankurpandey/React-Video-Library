@@ -21,3 +21,11 @@
 .data {
   background-color: orange;
 }
+.xi {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.xi:hover {
+  background-color: red;
+  color: white;
+}

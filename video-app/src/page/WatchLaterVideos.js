@@ -2,10 +2,24 @@ import React, { useContext } from "react";
 import { VideoListingContext } from "../component/context/VideoListContext";
 import Footer from "../component/Footer";
 import Header from "../component/Header";
+import axios from "axios";
 
 import "./WatchLaterVideos.css";
 function WatchLaterVideos() {
-  const { watchLater } = useContext(VideoListingContext);
+  const { watchLater, deleteWatchLater, setwatchLater } =
+    useContext(VideoListingContext);
+
+  const deleteWatchLaterVideo = async (_id) => {
+    console.log(localStorage.getItem("token"));
+    const response = await axios({
+      method: "DELETE",
+      url: `/api/user/watchlater/${_id}`,
+      headers: { authorization: localStorage.getItem("token") },
+      data: { video: setwatchLater },
+    });
+    console.log(response);
+    setwatchLater(response.data.watchlater);
+  };
 
   return (
     <div>
@@ -22,7 +36,12 @@ function WatchLaterVideos() {
                 src={videodata.videoUrl}
                 title="video watch later"
               ></iframe>
-              <span class="material-icons">delete</span>
+              <span
+                onClick={(_id) => deleteWatchLaterVideo(videodata._id)}
+                class="material-icons xi"
+              >
+                delete
+              </span>
             </div>
           );
         })}
