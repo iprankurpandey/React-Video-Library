@@ -5,7 +5,7 @@ import { VideoListingContext } from "./context/VideoListContext";
 import "./Videocard.css";
 function Videodata() {
   const { videoList, setVideoList } = useContext(VideoListingContext);
-  console.log(videoList);
+
   async function getVideoData() {
     try {
       await axios

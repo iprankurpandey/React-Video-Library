@@ -179,7 +179,7 @@ export const videos = [
     catagory: "Tedx",
     thumbnailUrl:
       "https://i.ytimg.com/an_webp/Hu4Yvq-g7_Y/mqdefault_6s.webp?du=3000&sqp=CKzY05IG&rs=AOn4CLA41ze0rJaneTopfsKh8NHDNBkmMg",
-    videoUrl: "https://www.youtube.com/embend/Hu4Yvq-g7_Y",
+    videoUrl: "https://www.youtube.com/embed/Hu4Yvq-g7_Y",
     creator_pic:
       "https://yt3.ggpht.com/ytc/AKedOLSAltH3yarKh0eytWLSLtB9-kPpMLM5EejH-GAZIg=s68-c-k-c0x00ffffff-no-rj",
   },

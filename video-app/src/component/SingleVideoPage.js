@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./SingleVideoPage.css";
-import Sidevideolist from "./Sidevideolist";
 
 function SingleVideoPage() {
-  const [singleVideo, setSingleVideo] = useState({});
+  const [singleVideo, setSingleVideo] = useState([]);
   const params = useParams();
   console.log(params);
   useEffect(() => {
@@ -20,7 +19,7 @@ function SingleVideoPage() {
     <div>
       <Header />
       <Link to="/VideoListing">
-        <span class="material-icons mib">arrow_back</span>
+        <span className="material-icons mib">arrow_back</span>
         Back to Video Listing
       </Link>
       <div className="single-video-container">
@@ -28,9 +27,9 @@ function SingleVideoPage() {
           className="video-component"
           src={singleVideo.videoUrl}
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
 
@@ -38,7 +37,10 @@ function SingleVideoPage() {
         <div className="creator-pic">
           <img src={singleVideo.creator_pic} alt="image1" />
         </div>
-        <span className="material-icons one mib">thumb_up</span>
+
+        <button>
+          <span className="material-icons one mib">thumb_up</span>
+        </button>
         <span className="material-icons one mib">playlist_add</span>
         <span className="material-icons one mib">share</span>
       </div>
