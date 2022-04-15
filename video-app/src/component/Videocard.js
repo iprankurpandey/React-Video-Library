@@ -36,7 +36,7 @@ function Videocard({ video }) {
             </button>
 
             <button className="show">
-              <span class="material-icons vmi">queue</span>ADD TO QUEUE
+              <span class="material-icons vmi">queue</span>ADD TO PLAYLIST
             </button>
           </div>
         </div>

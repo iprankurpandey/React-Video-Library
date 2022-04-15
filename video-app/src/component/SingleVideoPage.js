@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./SingleVideoPage.css";
@@ -29,6 +29,7 @@ function SingleVideoPage() {
           src={singleVideo.videoUrl}
           title="YouTube video player"
           frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
       </div>
@@ -43,6 +44,7 @@ function SingleVideoPage() {
       </div>
       <hr />
       <div className="video-description"> {singleVideo.description}</div>
+
       <Footer />
     </div>
   );
