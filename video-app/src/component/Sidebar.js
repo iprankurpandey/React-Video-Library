@@ -32,9 +32,11 @@ function Sidebar() {
         </div>
 
         <div className="likes">
-          <span className="material-icons mi" title="Liked Video">
-            thumb_up
-          </span>
+          <Link to="/LikesPage">
+            <span className="material-icons mi" title="Liked Video">
+              thumb_up
+            </span>
+          </Link>
           Likes
         </div>
 
