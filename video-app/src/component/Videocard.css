@@ -4,7 +4,6 @@
   border: 3px solid black;
   margin-left: 10rem;
   background-color: rgb(214, 235, 235);
-  cursor: pointer;
 }
 .video-card:hover {
   height: 24rem;
@@ -12,7 +11,6 @@
   border: 3px solid rgb(202, 9, 9);
   margin-left: 10rem;
   background-color: rgb(214, 235, 235);
-  cursor: pointer;
 }
 
 .video-card-image img {
@@ -81,5 +79,4 @@ button {
 button:hover {
   background-color: silver;
   color: white;
-  cursor: pointer;
 }
