@@ -14,16 +14,20 @@ function WatchLaterVideos() {
       <div className="watch-later-videos">
         {watchLater.map((videodata) => {
           return (
-            <iframe
-              className="watch-later-iframe"
-              width="420"
-              height="315"
-              src={videodata.videoUrl}
-              title="video watch later"
-            ></iframe>
+            <div>
+              <iframe
+                className="watch-later-iframe"
+                width="380"
+                height="315"
+                src={videodata.videoUrl}
+                title="video watch later"
+              ></iframe>
+              <span class="material-icons">delete</span>
+            </div>
           );
         })}
       </div>
+
       <Footer />
     </div>
   );

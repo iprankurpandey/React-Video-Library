@@ -1,7 +1,12 @@
 .watch-later-videos {
-  padding: 1.5rem;
+  padding: 1rem;
   width: 100%;
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .watch-later {
   font-size: 2rem;
@@ -12,4 +17,7 @@
   margin: 0rem 0rem 1rem 0;
   overflow: auto;
   margin: 0.3rem;
+}
+.data {
+  background-color: orange;
 }
