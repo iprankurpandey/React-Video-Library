@@ -6,7 +6,7 @@ import axios from "axios";
 import { VideoListingContext } from "./context/VideoListContext";
 function Videocard({ video }) {
   const { _id, title, creator_pic, videoUrl } = video;
-  const { watchLater, setwatchLater } = useContext(VideoListingContext);
+  const { setwatchLater, setHistory } = useContext(VideoListingContext);
 
   const watchLaterFn = async (videos, setwatchLater) => {
     console.log(videos);
@@ -19,6 +19,19 @@ function Videocard({ video }) {
     });
     console.log(response);
     setwatchLater(response.data.watchlater);
+  };
+
+  const History = async (videos, setHistory) => {
+    console.log(`this is history`, videos);
+    console.log(localStorage.getItem("token"));
+    const response = await axios({
+      method: "POST",
+      url: `/api/user/history`,
+      headers: { authorization: localStorage.getItem("token") },
+      data: { video: videos },
+    });
+    console.log(response);
+    setHistory(response.data.history);
   };
 
   return (
@@ -39,7 +52,13 @@ function Videocard({ video }) {
               <img src={creator_pic} alt="logo" />
             </div>
             <Link to={`/VideoListing/${_id}`}>
-              <h4 className="video-card-title"> {title}</h4>
+              <h4
+                className="video-card-title"
+                onClick={() => History(video, setHistory)}
+              >
+                {" "}
+                {title}
+              </h4>
             </Link>
             <h3 className="video-card-more-btn">
               <span class="material-icons vcardmi">more_horiz</span>

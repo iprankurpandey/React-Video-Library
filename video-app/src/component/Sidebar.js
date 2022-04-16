@@ -49,9 +49,11 @@ function Sidebar() {
           Watch Later
         </div>
         <div className="history">
-          <span className="material-icons mi" title="History">
-            history
-          </span>
+          <Link to="/HistoryPage">
+            <span className="material-icons mi" title="History">
+              history
+            </span>
+          </Link>
           History
         </div>
       </aside>
