@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SingleVideoPage from "./component/SingleVideoPage";
+
 import HistoryPage from "./page/HistoryPage";
 import Homepage from "./page/Homepage";
 import LikesPage from "./page/LikesPage";
 import PlaylistsPage from "./page/PlaylistsPage";
 import PlaylistviewPage from "./page/PlaylistviewPage";
+import SingleVideoPage from "./page/SingleVideoPage";
 import VideoListing from "./page/VideoListing";
 import { WatchLaterVideos } from "./page/WatchLaterVideos";
 

@@ -4,36 +4,37 @@ import { Link } from "react-router-dom";
 import "./Videocard.css";
 import axios from "axios";
 import { VideoListingContext } from "./context/VideoListContext";
+import { watchLaterFn, History } from "./VideoCardDataFn";
 
 function Videocard({ video }) {
   const { _id, title, creator_pic, videoUrl } = video;
   const { setwatchLater, setHistory } = useContext(VideoListingContext);
 
-  const watchLaterFn = async (videos, setwatchLater) => {
-    console.log(videos);
-    console.log(localStorage.getItem("token"));
-    const response = await axios({
-      method: "POST",
-      url: `/api/user/watchlater`,
-      headers: { authorization: localStorage.getItem("token") },
-      data: { video: videos },
-    });
-    console.log(response);
-    setwatchLater(response.data.watchlater);
-  };
+  // const watchLaterFn = async (videos, setwatchLater) => {
+  //   console.log(videos);
+  //   console.log(localStorage.getItem("token"));
+  //   const response = await axios({
+  //     method: "POST",
+  //     url: `/api/user/watchlater`,
+  //     headers: { authorization: localStorage.getItem("token") },
+  //     data: { video: videos },
+  //   });
+  //   console.log(response);
+  //   setwatchLater(response.data.watchlater);
+  // };
 
-  const History = async (videos, setHistory) => {
-    console.log(`this is history`, videos);
-    console.log(localStorage.getItem("token"));
-    const response = await axios({
-      method: "POST",
-      url: `/api/user/history`,
-      headers: { authorization: localStorage.getItem("token") },
-      data: { video: videos },
-    });
-    console.log(response);
-    setHistory(response.data.history);
-  };
+  // const History = async (videos, setHistory) => {
+  //   console.log(`this is history`, videos);
+  //   console.log(localStorage.getItem("token"));
+  //   const response = await axios({
+  //     method: "POST",
+  //     url: `/api/user/history`,
+  //     headers: { authorization: localStorage.getItem("token") },
+  //     data: { video: videos },
+  //   });
+  //   console.log(response);
+  //   setHistory(response.data.history);
+  // };
 
   return (
     <div>

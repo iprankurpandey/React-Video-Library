@@ -1,10 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import Footer from "./Footer";
-import Header from "./Header";
+import {
+  likedVideo,
+  btnmodel,
+  postPlaylist,
+  postPlaylistVideo,
+} from "./CrudFn";
 import "./SingleVideoPage.css";
-import { VideoListingContext } from "./context/VideoListContext";
+import { VideoListingContext } from "../component/context/VideoListContext";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 function SingleVideoPage() {
   const [singleVideo, setSingleVideo] = useState([]);

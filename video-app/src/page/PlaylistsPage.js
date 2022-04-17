@@ -8,29 +8,6 @@ import { Link, useParams } from "react-router-dom";
 function PlaylistsPage() {
   const { playlists, setPlaylists } = useContext(VideoListingContext);
 
-  // const deletePlaylist = async (_id) => {
-  //   console.log(localStorage.getItem("token"));
-  //   const response = await axios({
-  //     method: "DELETE",
-  //     url: `/api/user/playlists/${_id}`,
-  //     headers: { authorization: localStorage.getItem("token") },
-  //     data: { video: setPlaylist },
-  //   });
-  //   console.log(response);
-  //   setPlaylists(response.data.playlists);
-  // };
-
-  // async function getPerticularPlaylistdata(_id) {
-  //   const response = await axios({
-  //     method: "GET",
-  //     url: `/api/user/playlists`,
-  //     headers: { authorization: localStorage.getItem("token") },
-  //   });
-  //   setPlaylists(response.data.playlists);
-  // }
-
-  const params = useParams();
-
   return (
     <div>
       <Header />
@@ -49,13 +26,6 @@ function PlaylistsPage() {
                 </div>
               </Link>
 
-              {/* <iframe
-                className="watch-later-iframe"
-                width="380"
-                height="315"
-                src={videodata.videoUrl}
-                title="video watch later"
-              ></iframe> */}
               <span
                 // onClick={(_id) => deletePlaylist(videodata._id)}
                 class="material-icons xi"

@@ -30,13 +30,13 @@ function PlaylistviewPage() {
         return (
           <div>
             <h3>{videoData.title}</h3>
+
             <iframe
-              className="video-component"
+              className="watch-later-iframe"
+              width="380"
+              height="315"
               src={videoData.videoUrl}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              title="video watch later"
             ></iframe>
           </div>
         );
