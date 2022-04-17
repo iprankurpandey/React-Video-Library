@@ -17,7 +17,9 @@ function Header() {
             </Link>
           </span>
           <div class="favorites-item" title="favorite items">
-            <span class="material-icons navmtrl">playlist_play</span>{" "}
+            <Link to="/VideoListing">
+              <span class="material-icons navmtrl">playlist_play</span>
+            </Link>
           </div>
         </div>
 
