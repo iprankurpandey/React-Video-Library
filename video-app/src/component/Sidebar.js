@@ -25,9 +25,11 @@ function Sidebar() {
           Explore
         </div>
         <div className="playlists">
-          <span className="material-icons mi" title="Playlists">
-            queue
-          </span>
+          <Link to="/Playlists">
+            <span className="material-icons mi" title="Playlists">
+              queue
+            </span>
+          </Link>
           Playlists
         </div>
 
