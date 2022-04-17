@@ -7,6 +7,7 @@ import "./PlaylistsPage.css";
 import { Link, useParams } from "react-router-dom";
 function PlaylistsPage() {
   const { playlist, setPlaylist } = useContext(VideoListingContext);
+  console.log(playlist);
 
   const deletePlaylist = async (_id) => {
     console.log(localStorage.getItem("token"));
@@ -28,7 +29,7 @@ function PlaylistsPage() {
       data: { video: setPlaylist },
     });
     console.log(response);
-    // setPlaylist(response.data.playlists);
+    setPlaylist(response.data.playlists);
   }
 
   const params = useParams();
@@ -39,13 +40,13 @@ function PlaylistsPage() {
       <div className="watch-later"> PLAYLIST PAGE VIDEOS</div>
 
       <div className="watch-later-videos" onClick={getPlaylistsdata}>
-        {playlist.map((videodata) => {
+        {playlist?.map((videodata) => {
           return (
             <div>
               <Link to={`/Playlists/${videodata._id}`}>
                 <div className="watchlatercard">
                   <div className="watchlater-container">
-                    {videodata.title}
+                    {videodata.playlistName}
                     <span class="material-icons pmi">playlist_add_check</span>
                   </div>
                 </div>{" "}

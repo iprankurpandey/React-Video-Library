@@ -1,34 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import { VideoListingContext } from "../component/context/VideoListContext";
 function PlaylistviewPage() {
   const [playlistview, setPlaylistview] = useState([]);
+  // const { newplaylist, setnewplaylist } = useContext(VideoListingContext);
+
   console.log(playlistview);
   const params = useParams();
-  console.log(params);
-  useEffect(() => {
+
+  async function getPlaylistData() {
     const response = axios({
       method: "GET",
       url: `/api/user/playlists/${params._id}`,
       headers: { authorization: localStorage.getItem("token") },
-      data: { video: playlistview },
+      // data: { playlist: videos },
     });
     response.then((res) => {
       console.log(res);
     });
-    // setPlaylistview(response.data.playlists);
+    setPlaylistview(response.data.playlist.videos);
+  }
+
+  useEffect(() => {
+    getPlaylistData();
   }, []);
 
   return (
     <div>
       <Header />
       <div className="watch-later"> PLAYLIST PAGE VIDEOS</div>
-      {playlistview.map((play) => {
+      {playlistview?.map((play) => {
         return (
           <div>
-            {play.title}
             <iframe
               className="video-component"
               src={play.videoUrl}

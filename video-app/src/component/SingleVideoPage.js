@@ -11,11 +11,11 @@ function SingleVideoPage() {
   const { likeVideo, setLikedVideo, playlist, setPlaylist } =
     useContext(VideoListingContext);
 
+  console.log(singleVideo);
   const [input, setInput] = useState([]);
-  console.log(input);
   const [show, setShow] = useState("none");
   const params = useParams();
-  console.log(params);
+  console.log(params._id);
 
   useEffect(() => {
     axios
@@ -38,33 +38,29 @@ function SingleVideoPage() {
     setShow(show === "none" ? "block" : "none");
   }
 
-  async function postPlaylist(singleVideo, setPlaylist) {
+  async function postPlaylist(playlist, setPlaylist) {
     const response = await axios({
       method: "POST",
       url: `/api/user/playlists`,
       headers: { authorization: localStorage.getItem("token") },
       data: {
-        playlist: { title: input },
-        // playlist: { title: input, video: singleVideo },
+        playlist: { playlistName: input },
       },
     });
     console.log(response);
     setPlaylist(response.data.playlists);
   }
 
-  async function postPlaylistVideo(singleVideo, _id) {
+  const postPlaylistVideo = async (id, data) => {
     const response = await axios({
       method: "POST",
-      url: `/api/user/playlists/${_id}`,
+      url: `/api/user/playlists/${id}`,
       headers: { authorization: localStorage.getItem("token") },
-      data: {
-        // playlist: { title: input },
-        playlist: { video: singleVideo },
-      },
+      data: { video: data },
     });
     console.log(response);
-    // setPlaylist(response.data.playlist);
-  }
+    setPlaylist(response.data.playlists);
+  };
 
   return (
     <div>
@@ -107,20 +103,19 @@ function SingleVideoPage() {
 
         <span
           class="material-icons add"
-          onClick={() => postPlaylist(singleVideo, setPlaylist)}
+          onClick={() => postPlaylist(playlist, setPlaylist)}
         >
           add
         </span>
 
-        {playlist.map((play1) => {
+        {playlist?.map((play1) => {
           return (
             <div>
               <input
                 type="checkbox"
-                onChange={() => postPlaylistVideo(singleVideo, setPlaylist)}
+                onChange={() => postPlaylistVideo(play1._id, singleVideo)}
               />{" "}
-              {play1.title}
-              {play1.length}
+              {play1.playlistName}
             </div>
           );
         })}

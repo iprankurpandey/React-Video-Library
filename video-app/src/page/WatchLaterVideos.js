@@ -9,7 +9,6 @@ function WatchLaterVideos() {
   const { watchLater, setwatchLater } = useContext(VideoListingContext);
 
   const deleteWatchLaterVideo = async (_id) => {
-    console.log(localStorage.getItem("token"));
     const response = await axios({
       method: "DELETE",
       url: `/api/user/watchlater/${_id}`,
