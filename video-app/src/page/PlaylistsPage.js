@@ -6,50 +6,47 @@ import axios from "axios";
 import "./PlaylistsPage.css";
 import { Link, useParams } from "react-router-dom";
 function PlaylistsPage() {
-  const { playlist, setPlaylist } = useContext(VideoListingContext);
-  console.log(playlist);
+  const { playlists, setPlaylists } = useContext(VideoListingContext);
 
-  const deletePlaylist = async (_id) => {
-    console.log(localStorage.getItem("token"));
-    const response = await axios({
-      method: "DELETE",
-      url: `/api/user/playlists/${_id}`,
-      headers: { authorization: localStorage.getItem("token") },
-      data: { video: setPlaylist },
-    });
-    console.log(response);
-    setPlaylist(response.data.playlists);
-  };
+  // const deletePlaylist = async (_id) => {
+  //   console.log(localStorage.getItem("token"));
+  //   const response = await axios({
+  //     method: "DELETE",
+  //     url: `/api/user/playlists/${_id}`,
+  //     headers: { authorization: localStorage.getItem("token") },
+  //     data: { video: setPlaylist },
+  //   });
+  //   console.log(response);
+  //   setPlaylists(response.data.playlists);
+  // };
 
-  async function getPlaylistsdata(_id) {
-    const response = await axios({
-      method: "GET",
-      url: `/api/user/playlists`,
-      headers: { authorization: localStorage.getItem("token") },
-      data: { video: setPlaylist },
-    });
-    console.log(response);
-    setPlaylist(response.data.playlists);
-  }
+  // async function getPerticularPlaylistdata(_id) {
+  //   const response = await axios({
+  //     method: "GET",
+  //     url: `/api/user/playlists`,
+  //     headers: { authorization: localStorage.getItem("token") },
+  //   });
+  //   setPlaylists(response.data.playlists);
+  // }
 
   const params = useParams();
-  console.log(params);
+
   return (
     <div>
       <Header />
       <div className="watch-later"> PLAYLIST PAGE VIDEOS</div>
 
-      <div className="watch-later-videos" onClick={getPlaylistsdata}>
-        {playlist?.map((videodata) => {
+      <div className="watch-later-videos">
+        {playlists?.map((playlist) => {
           return (
             <div>
-              <Link to={`/Playlists/${videodata._id}`}>
+              <Link to={`/Playlists/${playlist._id}`}>
                 <div className="watchlatercard">
                   <div className="watchlater-container">
-                    {videodata.playlistName}
+                    {playlist.playlistName}
                     <span class="material-icons pmi">playlist_add_check</span>
                   </div>
-                </div>{" "}
+                </div>
               </Link>
 
               {/* <iframe
@@ -60,7 +57,7 @@ function PlaylistsPage() {
                 title="video watch later"
               ></iframe> */}
               <span
-                onClick={(_id) => deletePlaylist(videodata._id)}
+                // onClick={(_id) => deletePlaylist(videodata._id)}
                 class="material-icons xi"
               >
                 delete

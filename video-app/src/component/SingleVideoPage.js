@@ -8,20 +8,23 @@ import { VideoListingContext } from "./context/VideoListContext";
 
 function SingleVideoPage() {
   const [singleVideo, setSingleVideo] = useState([]);
-  const { likeVideo, setLikedVideo, playlist, setPlaylist } =
-    useContext(VideoListingContext);
+  const {
+    setLikedVideo,
+    playlists,
+    setPlaylists,
+    singlePlaylist,
+    setSinglePlaylist,
+  } = useContext(VideoListingContext);
 
-  console.log(singleVideo);
   const [input, setInput] = useState([]);
   const [show, setShow] = useState("none");
-  const params = useParams();
-  console.log(params._id);
+  const { _id } = useParams();
 
   useEffect(() => {
     axios
-      .get(`/api/video/${params._id}`)
+      .get(`/api/video/${_id}`)
       .then((response) => setSingleVideo(response.data.video));
-  }, []);
+  }, [_id]);
 
   const likedVideo = async (singleVideo, setLikedVideo) => {
     const response = await axios({
@@ -30,7 +33,6 @@ function SingleVideoPage() {
       headers: { authorization: localStorage.getItem("token") },
       data: { video: singleVideo },
     });
-    console.log(response);
     setLikedVideo(response.data.likes);
   };
 
@@ -38,7 +40,7 @@ function SingleVideoPage() {
     setShow(show === "none" ? "block" : "none");
   }
 
-  async function postPlaylist(playlist, setPlaylist) {
+  async function postPlaylist(setPlaylist) {
     const response = await axios({
       method: "POST",
       url: `/api/user/playlists`,
@@ -47,8 +49,7 @@ function SingleVideoPage() {
         playlist: { playlistName: input },
       },
     });
-    console.log(response);
-    setPlaylist(response.data.playlists);
+    setPlaylists(response.data.playlists);
   }
 
   const postPlaylistVideo = async (id, data) => {
@@ -59,7 +60,13 @@ function SingleVideoPage() {
       data: { video: data },
     });
     console.log(response);
-    setPlaylist(response.data.playlists);
+    const newPlaylists = playlists.map((playlist) => {
+      if (playlist._id === response.data.playlist._id) {
+        return { ...response.data.playlist };
+      }
+      return playlist;
+    });
+    setPlaylists(newPlaylists);
   };
 
   return (
@@ -103,12 +110,12 @@ function SingleVideoPage() {
 
         <span
           class="material-icons add"
-          onClick={() => postPlaylist(playlist, setPlaylist)}
+          onClick={() => postPlaylist(setPlaylists)}
         >
           add
         </span>
 
-        {playlist?.map((play1) => {
+        {playlists?.map((play1) => {
           return (
             <div>
               <input
