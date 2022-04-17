@@ -3,6 +3,7 @@ import SingleVideoPage from "./component/SingleVideoPage";
 import HistoryPage from "./page/HistoryPage";
 import Homepage from "./page/Homepage";
 import LikesPage from "./page/LikesPage";
+import PlaylistsPage from "./page/PlaylistsPage";
 import VideoListing from "./page/VideoListing";
 import { WatchLaterVideos } from "./page/WatchLaterVideos";
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/WatchLaterVideos" exact element={<WatchLaterVideos />} />
         <Route path="/LikesPage" exact element={<LikesPage />} />
         <Route path="/HistoryPage" exact element={<HistoryPage />} />
+        <Route path="/Playlists" exact element={<PlaylistsPage />} />
       </Routes>
     </div>
   );
