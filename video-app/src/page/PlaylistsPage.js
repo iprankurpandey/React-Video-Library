@@ -1,31 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { VideoListingContext } from "../component/context/VideoListContext";
 import Footer from "../component/Footer";
 import Header from "../component/Header";
 import axios from "axios";
+function PlaylistsPage() {
+  const { playlist, setPlaylist } = useContext(VideoListingContext);
 
-import "./WatchLaterVideos.css";
-function WatchLaterVideos() {
-  const { watchLater, setwatchLater } = useContext(VideoListingContext);
-
-  const deleteWatchLaterVideo = async (_id) => {
+  const deletePlaylist = async (_id) => {
     console.log(localStorage.getItem("token"));
     const response = await axios({
       method: "DELETE",
-      url: `/api/user/watchlater/${_id}`,
+      url: `/api/user/playlists/${_id}`,
       headers: { authorization: localStorage.getItem("token") },
-      data: { video: setwatchLater },
+      data: { video: setPlaylist },
     });
     console.log(response);
-    setwatchLater(response.data.watchlater);
+    setPlaylist(response.data.playlists);
   };
 
   return (
     <div>
       <Header />
-      <div className="watch-later"> WATCH LATER VIDEOS</div>
+      <div className="watch-later"> PLAYLIST PAGE VIDEOS</div>
       <div className="watch-later-videos">
-        {watchLater.map((videodata) => {
+        {playlist.map((videodata) => {
           return (
             <div>
               <iframe
@@ -36,7 +34,7 @@ function WatchLaterVideos() {
                 title="video watch later"
               ></iframe>
               <span
-                onClick={(_id) => deleteWatchLaterVideo(videodata._id)}
+                onClick={(_id) => deletePlaylist(videodata._id)}
                 class="material-icons xi"
               >
                 delete
@@ -51,4 +49,4 @@ function WatchLaterVideos() {
   );
 }
 
-export { WatchLaterVideos };
+export default PlaylistsPage;
