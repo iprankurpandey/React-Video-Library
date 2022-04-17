@@ -9,7 +9,6 @@ function Homepage() {
   return (
     <div>
       <Header />
-
       <Hero />
       <Footer />
     </div>

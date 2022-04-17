@@ -16,6 +16,7 @@ function SingleVideoPage() {
   const [show, setShow] = useState("none");
   const params = useParams();
   console.log(params);
+
   useEffect(() => {
     axios
       .get(`/api/video/${params._id}`)
@@ -43,12 +44,28 @@ function SingleVideoPage() {
       url: `/api/user/playlists`,
       headers: { authorization: localStorage.getItem("token") },
       data: {
-        playlist: { title: input, video: singleVideo },
+        playlist: { title: input },
+        // playlist: { title: input, video: singleVideo },
       },
     });
     console.log(response);
     setPlaylist(response.data.playlists);
   }
+
+  async function postPlaylistVideo(singleVideo, _id) {
+    const response = await axios({
+      method: "POST",
+      url: `/api/user/playlists/${_id}`,
+      headers: { authorization: localStorage.getItem("token") },
+      data: {
+        // playlist: { title: input },
+        playlist: { video: singleVideo },
+      },
+    });
+    console.log(response);
+    // setPlaylist(response.data.playlist);
+  }
+
   return (
     <div>
       <Header />
@@ -70,7 +87,6 @@ function SingleVideoPage() {
         <div className="creator-pic">
           <img src={singleVideo.creator_pic} alt="image1" />
         </div>
-
         <button
           className="likebtn"
           onClick={() => likedVideo(singleVideo, setLikedVideo)}
@@ -88,14 +104,27 @@ function SingleVideoPage() {
           placeholder="playlist name"
           onChange={(e) => setInput(e.target.value)}
         />
+
         <span
           class="material-icons add"
           onClick={() => postPlaylist(singleVideo, setPlaylist)}
         >
           add
         </span>
-      </div>
 
+        {playlist.map((play1) => {
+          return (
+            <div>
+              <input
+                type="checkbox"
+                onChange={() => postPlaylistVideo(singleVideo, setPlaylist)}
+              />{" "}
+              {play1.title}
+              {play1.length}
+            </div>
+          );
+        })}
+      </div>
       <hr />
       <div className="video-description"> {singleVideo.description}</div>
       <Footer />

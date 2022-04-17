@@ -72,8 +72,8 @@ hr {
   font-size: 1.2rem;
 }
 .modal-item {
-  height: 5rem;
-  width: 18rem;
+  height: 15rem;
+  width: 20rem;
   background-color: rgb(121, 121, 113);
   border: 2px solid rgb(0, 0, 0);
   display: flex;
@@ -81,19 +81,24 @@ hr {
   justify-content: space-between;
   margin: 1rem;
   position: relative;
-  bottom: 6rem;
-  left: 18rem;
+  bottom: 20rem;
+  left: 50rem;
+  padding: 1rem;
 }
-.modal-item:hover,
+/* .modal-item:hover,
 .modal-item:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
+} */
 .add {
   background-color: rgb(22, 22, 22);
   color: white;
   font-size: 2rem;
-  height: 1.5rem;
+  height: 2rem;
   border-radius: 0.3rem;
+}
+input[type="checkbox"] {
+  width: 1rem; /*Desired width*/
+  height: 1rem; /*Desired height*/
 }

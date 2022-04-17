@@ -4,6 +4,7 @@ import HistoryPage from "./page/HistoryPage";
 import Homepage from "./page/Homepage";
 import LikesPage from "./page/LikesPage";
 import PlaylistsPage from "./page/PlaylistsPage";
+import PlaylistviewPage from "./page/PlaylistviewPage";
 import VideoListing from "./page/VideoListing";
 import { WatchLaterVideos } from "./page/WatchLaterVideos";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/LikesPage" exact element={<LikesPage />} />
         <Route path="/HistoryPage" exact element={<HistoryPage />} />
         <Route path="/Playlists" exact element={<PlaylistsPage />} />
+        <Route path="/Playlists/:_id" exact element={<PlaylistviewPage />} />
       </Routes>
     </div>
   );
