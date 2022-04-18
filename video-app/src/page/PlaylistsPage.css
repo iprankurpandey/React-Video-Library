@@ -1,0 +1,23 @@
+.watchlatercard {
+  background-image: url("https://i.ibb.co/XbbwyHR/0-857-1999-1999-png-1649045906417.png");
+  height: 12rem;
+  width: 20rem;
+  background-color: pink;
+  margin: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.watchlater-container {
+  height: 12rem;
+  width: 6rem;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  opacity: 0.8;
+}
+.pmi {
+  font-size: 3rem;
+  color: white;
+}

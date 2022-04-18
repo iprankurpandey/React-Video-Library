@@ -1,0 +1,84 @@
+.video-card {
+  height: 19rem;
+  width: 20rem;
+  border: 3px solid black;
+  margin-left: 10rem;
+  background-color: rgb(214, 235, 235);
+}
+.video-card:hover {
+  height: 24rem;
+  width: 20rem;
+  border: 3px solid rgb(202, 9, 9);
+  margin-left: 10rem;
+  background-color: rgb(214, 235, 235);
+
+  transform: scale(1.2);
+}
+
+.video-card-image img {
+  height: 12rem;
+  width: 100%;
+}
+
+.video-card-logo img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.video-card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.vcardmi {
+  font-size: 2rem;
+}
+.video-card-logo {
+  display: flex;
+  flex-direction: column;
+}
+.videocard-style {
+  display: grid;
+  grid-template-columns: repeat(4, 350px);
+  gap: 1.5rem;
+  overflow: auto;
+  margin-bottom: 8rem;
+  /* position: sticky; */
+}
+
+.show {
+  display: none;
+}
+
+.video-card:hover .show {
+  display: block;
+  height: 2.5rem;
+  width: 19.7rem;
+  border: 3px solid rgb(105, 103, 103);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  font-weight: 800;
+}
+.vmi {
+  font-size: 2rem;
+}
+.video-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  flex-direction: column;
+}
+button {
+  margin: 0 0 0.5rem 0;
+}
+button:hover {
+  background-color: silver;
+  color: white;
+}
